@@ -8,7 +8,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Created by zhangxiang on 2017/6/1.
+ *
  */
 
 public class CommonInterceptor implements Interceptor {

@@ -18,7 +18,7 @@ import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
 
 /**
- * Created by wangjian on 2016/9/20.
+ *
  */
 public class ProgressSubscriber<T> extends Subscriber<T> {
     //    回调接口

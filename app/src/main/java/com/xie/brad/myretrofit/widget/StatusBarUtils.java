@@ -7,13 +7,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 /**
- * 项目名称：fs.com.fsmanagementsystem.widget
- * 类描述：
- * 创建人：zhangxiang
- * 创建时间：2017/2/18 12:21
- * 修改人：zhangxiang
- * 修改时间：2017/2/18 12:21
- * 修改备注：
  */
 public class StatusBarUtils {
 

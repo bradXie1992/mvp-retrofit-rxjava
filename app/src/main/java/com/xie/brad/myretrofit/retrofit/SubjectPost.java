@@ -9,7 +9,7 @@ import rx.Subscriber;
 
 /**
  * 测试数据
- * Created by WZG on 2016/7/16.
+ *
  */
 public class SubjectPost extends BaseEntity {
     //    回调sub

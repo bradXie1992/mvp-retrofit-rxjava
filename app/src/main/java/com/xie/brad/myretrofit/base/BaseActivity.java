@@ -9,7 +9,7 @@ import com.xie.brad.myretrofit.widget.StatusBarUtils;
 
 
 /**
- * Created by wangjian on 2016/9/19.
+ *
  */
 public class BaseActivity extends Activity {
 

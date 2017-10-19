@@ -9,12 +9,7 @@ import java.util.List;
 
 public class LoginModel implements Serializable {
 
-    /**
-     * admin_description : 深圳仓管
-     * admin_level : 29
-     * admin_name : King.Li
-     * authority : [{"id":"1","name":"订单","show":true},{"id":"2","name":"半成品仓管","show":false},{"id":"3","name":"成品仓管","show":true},{"id":"4","name":"包装出库","show":false},{"id":"5","name":"盘点","show":true},{"id":"6","name":"打印条形码","show":true},{"id":"7","name":"扫描单个产品信息","show":true}]
-     */
+
     private String admin_description;
     private String admin_level;
     private String admin_name;
@@ -37,11 +32,7 @@ public class LoginModel implements Serializable {
         this.weight_unit = weight_unit;
     }
 
-    /**
-     * id : 1
-     * name : 订单
-     * show : true
-     */
+
 
     private List<AuthorityBean> authority;
 

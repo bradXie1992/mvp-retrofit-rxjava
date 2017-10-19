@@ -16,7 +16,4 @@ public interface HttpService {
     @FormUrlEncoded
     @POST(ServerUrl.LoginUrl)
     Observable<BaseResultEntity<LoginModel>> Login(@Field("admin_name") String username, @Field("admin_pass") String password);
-
-//    @POST(ServerUrl.SignOut)
-//    Observable<BaseResultEntity<Object>> SignOut();
 }

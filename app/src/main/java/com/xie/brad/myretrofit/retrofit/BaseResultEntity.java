@@ -2,7 +2,7 @@ package com.xie.brad.myretrofit.retrofit;
 
 /**
  * 回调信息统一封装类
- * Created by WZG on 2016/7/16.
+ *
  */
 public class BaseResultEntity<T> {
     @Override

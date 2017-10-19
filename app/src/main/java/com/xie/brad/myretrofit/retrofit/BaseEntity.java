@@ -7,7 +7,7 @@ import rx.functions.Func1;
 
 /**
  * 请求数据统一封装类
- * Created by zhangxiang on 2016/7/16.
+ *
  */
 public abstract class BaseEntity<T> implements Func1<BaseResultEntity<T>, BaseResultEntity<T>> {
 /**
