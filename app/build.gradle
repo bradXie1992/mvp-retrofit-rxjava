@@ -36,7 +36,6 @@ dependencies {
     compile 'com.google.code.gson:gson:+'
     /*注入工具*/
     compile 'com.jakewharton:butterknife:5.1.1'
-
-
+    /*加载框*/
     compile 'com.kaopiz:kprogresshud:1.0.2'
 }
