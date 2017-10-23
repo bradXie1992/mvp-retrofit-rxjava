@@ -1,18 +1,13 @@
 package com.xie.brad.myretrofit.login.view;
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.xie.brad.myretrofit.R;
 import com.xie.brad.myretrofit.base.BaseActivity;
 import com.xie.brad.myretrofit.login.model.LoginModel;
 import com.xie.brad.myretrofit.login.presenter.LoginPresenterImpl;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -23,19 +18,10 @@ import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
-
-    @InjectView(R.id.login_text)
-    TextView loginText;
-    @InjectView(R.id.username_text)
-    TextView usernameText;
     @InjectView(R.id.username_edittext)
     EditText usernameEdittext;
-    @InjectView(R.id.pasword_text)
-    TextView paswordText;
     @InjectView(R.id.pasword_edittext)
     EditText paswordEdittext;
-    @InjectView(R.id.login_button)
-    Button loginButton;
     private LoginPresenterImpl loginPresenter;
 
     @Override
@@ -46,17 +32,24 @@ public class LoginActivity extends BaseActivity implements LoginView {
         init();
     }
 
+    /**
+     * 这里给LoginPresenterImpl的构造方法传入参数
+     */
     private void init() {
         loginPresenter = new LoginPresenterImpl(LoginActivity.this);
     }
 
+    /**
+     * @param message
+     * 这个方法再 LoginPresenterImpl 这个类中会调用
+     */
     @Override
     public void showMessage(String message) {
         Toast.makeText(LoginActivity.this,message,Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * 访问成功的回调
+     * 访问成功的回调  再 LoginPresenterImpl 类中调用
      * 回调来的参数就是LoginModel
      */
     @Override

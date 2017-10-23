@@ -24,11 +24,20 @@ public class LoginPresenterImpl implements LoginPresenter {
     String username;
     String password;
 
+    /**
+     * @param loginView
+     * 构造方法没传进来View，再处理完登陆逻辑后，调用View里面的方法，来对界面进行操作
+     */
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         this.loginActivity = (LoginActivity) loginView;
     }
 
+    /**
+     * @param username
+     * @param password
+     * 登陆的逻辑
+     */
     @Override
     public void login(String username, String password) {
         if (!TextUtils.isEmpty(username)) {
@@ -44,22 +53,30 @@ public class LoginPresenterImpl implements LoginPresenter {
         }
     }
 
+    /**
+     * @param username
+     * @param password
+     * 登陆网络请求
+     */
     private void getLoginData(String username, String password) {
+
         SubjectPost postEntity = new SubjectPost(new ProgressSubscriber(LoginListener, "正在登陆", loginActivity));
+        //创建 RetrofitManage 服务
         ConnectionManager manager = ConnectionManager.getInstance();
+        //执行请求
         Observable<BaseResultEntity<LoginModel>> login = manager.getDataMethord().Login(username, password);
         manager.doHttpObservable(login, postEntity);
 
     }
 
-    //   回调一一对应
+    // 请求的回掉
     HttpOnNextListener LoginListener = new HttpOnNextListener<BaseResultEntity<LoginModel>>() {
         @Override
-        public void onNext(BaseResultEntity<LoginModel> subjects) {
-            if (subjects.getResult().equals("success")) {
-                loginView.LoginSuccess(subjects.getData());
+        public void onNext(BaseResultEntity<LoginModel> loginModelBaseResultEntity) {
+            if (loginModelBaseResultEntity.getResult().equals("success")) {
+                loginView.LoginSuccess(loginModelBaseResultEntity.getData());
             } else {
-                loginView.showMessage(subjects.getMsg());
+                loginView.showMessage(loginModelBaseResultEntity.getMsg());
             }
         }
     };
